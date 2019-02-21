@@ -46,9 +46,7 @@ public class DemoApplication {
 
 	void createAndDeployStream() {
 
-		Stream myStreamApp = Stream.builder(dataFlowOperations).name("myStreamApp")
-				.definition("myHttpSource | myLogSink").create().deploy();
-		System.out.println("Status --> " + myStreamApp.getStatus());
+		Stream.builder(dataFlowOperations).name("myStreamApp").definition("myHttpSource | myLogSink").create().deploy();
 	}
 
 	void unregisterAllApps() {
