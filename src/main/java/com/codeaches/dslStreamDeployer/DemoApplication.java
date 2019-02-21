@@ -20,6 +20,7 @@ public class DemoApplication {
 
 	@Bean
 	CommandLineRunner runner() {
+
 		return args -> {
 
 			registerHttpSource();
@@ -48,9 +49,6 @@ public class DemoApplication {
 		Stream myStreamApp = Stream.builder(dataFlowOperations).name("myStreamApp")
 				.definition("myHttpSource | myLogSink").create().deploy();
 		System.out.println("Status --> " + myStreamApp.getStatus());
-	}
-
-	void destroyStream() {
 	}
 
 	void unregisterAllApps() {
