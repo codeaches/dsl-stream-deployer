@@ -1,4 +1,4 @@
-package com.codeaches.dslStreamDeployer;
+package com.codeaches.dsl.stream.deployer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -46,7 +46,7 @@ public class DemoApplication {
 
 	void createAndDeployStream() {
 
-		Stream.builder(dataFlowOperations).name("myStreamApp").definition("myHttpSource | myLogSink").create().deploy();
+		Stream.builder(dataFlowOperations).name("myStreamApp").definition("myHttpSource | myLogSink").create().deploy();		
 	}
 
 	void unregisterAllApps() {
